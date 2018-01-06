@@ -2,6 +2,7 @@
 #define IHARBURY_INTGEO_POINT_2D_H
 
 #include <stdint.h>
+
 #include <cstddef>
 #include <ostream>
 

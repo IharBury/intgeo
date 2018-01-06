@@ -1,12 +1,14 @@
-#include "point_2d.h"
 #include <sstream>
+
 #include "gtest/gtest.h"
 
-using iharbury::intgeo::Point2D;
-using std::string;
-using std::stringstream;
+#include "point_2d.h"
 
 namespace {
+
+using ::iharbury::intgeo::Point2D;
+using ::std::string;
+using ::std::stringstream;
 
 TEST(point_2d_test, a_point_is_initialized_to_origin_of_coordinates_by_default) {
   Point2D point;
