@@ -30,4 +30,54 @@ TEST(line_2d_test, a_line_can_be_assigned) {
   EXPECT_EQ(Point2D(3, 3), assigned.point2());
 }
 
+TEST(line_2d_test, a_line_can_detect_a_point_on_it) {
+  Line2D line(Point2D(1, 4), Point2D(10, 19));
+  EXPECT_TRUE(line.HasPoint(Point2D(4, 9)));
+}
+
+TEST(line_2d_test, a_line_can_detect_a_point_not_on_it) {
+  Line2D line(Point2D(1, 4), Point2D(10, 19));
+  EXPECT_FALSE(line.HasPoint(Point2D(4, 10)));
+}
+
+TEST(line_2d_test, point1_of_a_line_is_on_the_line) {
+  Line2D line(Point2D(1, 4), Point2D(10, 19));
+  EXPECT_TRUE(line.HasPoint(Point2D(1, 4)));
+}
+
+TEST(line_2d_test, point2_of_a_line_is_on_the_line) {
+  Line2D line(Point2D(1, 4), Point2D(10, 19));
+  EXPECT_TRUE(line.HasPoint(Point2D(10, 19)));
+}
+
+TEST(line_2d_test, a_line_can_detect_a_point_on_it_for_large_coordinates) {
+  Line2D line(Point2D(INT16_MIN, INT16_MAX), Point2D(INT16_MAX, INT16_MIN));
+  EXPECT_TRUE(line.HasPoint(Point2D(INT16_MIN + 1, INT16_MAX - 1)));
+}
+
+TEST(line_2d_test, a_line_can_detect_a_point_not_on_it_for_large_coordinates) {
+  Line2D line(Point2D(INT16_MIN, INT16_MAX), Point2D(INT16_MAX, INT16_MIN));
+  EXPECT_FALSE(line.HasPoint(Point2D(INT16_MIN, INT16_MIN)));
+}
+
+TEST(line_2d_test, a_horizonal_line_can_detect_a_point_on_it) {
+  Line2D line(Point2D(1, 3), Point2D(-10, 3));
+  EXPECT_TRUE(line.HasPoint(Point2D(18, 3)));
+}
+
+TEST(line_2d_test, a_horizonal_line_can_detect_a_point_not_on_it) {
+  Line2D line(Point2D(1, 3), Point2D(-10, 3));
+  EXPECT_FALSE(line.HasPoint(Point2D(1, 4)));
+}
+
+TEST(line_2d_test, a_vertical_line_can_detect_a_point_on_it) {
+  Line2D line(Point2D(1, 3), Point2D(1, -7));
+  EXPECT_TRUE(line.HasPoint(Point2D(1, -15)));
+}
+
+TEST(line_2d_test, a_vertical_line_can_detect_a_point_not_on_it) {
+  Line2D line(Point2D(1, 3), Point2D(1, -7));
+  EXPECT_FALSE(line.HasPoint(Point2D(2, 3)));
+}
+
 } // namespace
