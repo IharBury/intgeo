@@ -1,8 +1,8 @@
 #ifndef IHARBURY_INTGEO_POINT_2D_H
 #define IHARBURY_INTGEO_POINT_2D_H
 
+#include <stdint.h>
 #include <cstddef>
-#include <functional>
 #include <ostream>
 
 namespace iharbury {
@@ -13,25 +13,21 @@ class Point2D final {
   class Hasher;
 
   inline Point2D() : x_(0), y_(0) {}
-  inline Point2D(int x, int y) : x_(x), y_(y) {}
+  inline Point2D(int32_t x, int32_t y) : x_(x), y_(y) {}
 
-  inline int x() const { return x_; }
-  inline int y() const { return y_; }
+  inline int32_t x() const { return x_; }
+  inline int32_t y() const { return y_; }
 
  private:
-  int x_;
-  int y_;
+  int32_t x_;
+  int32_t y_;
 };
 
 class Point2D::Hasher final {
  public:
   inline std::size_t operator()(const Point2D &point) const {
-    return coordinateHasher(point.x()) * std::size_t(37987) +
-      coordinateHasher(point.y());
+    return std::size_t(point.x()) * std::size_t(37987) + std::size_t(point.y());
   }
-
- private:
-  std::hash<int> coordinateHasher;
 };
 
 inline bool operator==(const Point2D &point1, const Point2D &point2) {
