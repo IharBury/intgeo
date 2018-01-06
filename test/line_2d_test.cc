@@ -80,4 +80,44 @@ TEST(line_2d_test, a_vertical_line_can_detect_a_point_not_on_it) {
   EXPECT_FALSE(line.HasPoint(Point2D(2, 3)));
 }
 
+TEST(line_2d_test, equal_lines_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
+    Line2D(Point2D(3, 5), Point2D(4, 6)));
+}
+
+TEST(line_2d_test, not_equal_lines_can_be_detected) {
+  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
+    Line2D(Point2D(3, 5), Point2D(4, 7)));
+}
+
+TEST(line_2d_test, not_inequal_lines_can_be_detected) {
+  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) !=
+    Line2D(Point2D(3, 5), Point2D(4, 6)));
+}
+
+TEST(line_2d_test, inequal_lines_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) !=
+    Line2D(Point2D(3, 5), Point2D(4, 7)));
+}
+
+TEST(line_2d_test, line_is_equal_to_itself) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
+    Line2D(Point2D(2, 4), Point2D(5, 7)));
+}
+
+TEST(line_2d_test, parallel_lines_are_not_equal) {
+  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
+    Line2D(Point2D(3, 4), Point2D(6, 7)));
+}
+
+TEST(line_2d_test, horizonal_equal_lines_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 4)) ==
+    Line2D(Point2D(3, 4), Point2D(4, 4)));
+}
+
+TEST(line_2d_test, vertical_equal_lines_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(2, 7)) ==
+    Line2D(Point2D(2, 5), Point2D(2, 6)));
+}
+
 } // namespace

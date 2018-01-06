@@ -26,6 +26,14 @@ class Line2D final {
   Point2D point2_;
 };
 
+inline bool operator==(const Line2D &line1, const Line2D &line2) {
+  return line1.HasPoint(line2.point1()) && line1.HasPoint(line2.point2());
+}
+
+inline bool operator!=(const Line2D &line1, const Line2D &line2) {
+  return !(line1 == line2);
+}
+
 } // namespace intgeo
 } // namespace iharbury
 
