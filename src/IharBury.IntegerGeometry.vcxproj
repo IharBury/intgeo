@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="line_2d.h" />
     <ClInclude Include="point_2d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="line_2d.cc" />
     <ClCompile Include="point_2d.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

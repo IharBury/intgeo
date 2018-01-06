@@ -2,8 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="point_2d.cc" />
+    <ClCompile Include="line_2d.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point_2d.h" />
+    <ClInclude Include="line_2d.h" />
   </ItemGroup>
 </Project>
