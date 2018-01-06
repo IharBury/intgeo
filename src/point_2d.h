@@ -14,14 +14,14 @@ class Point2D final {
   class Hasher;
 
   inline Point2D() : x_(0), y_(0) {}
-  inline Point2D(int32_t x, int32_t y) : x_(x), y_(y) {}
+  inline Point2D(int16_t x, int16_t y) : x_(x), y_(y) {}
 
-  inline int32_t x() const { return x_; }
-  inline int32_t y() const { return y_; }
+  inline int16_t x() const { return x_; }
+  inline int16_t y() const { return y_; }
 
  private:
-  int32_t x_;
-  int32_t y_;
+  int16_t x_;
+  int16_t y_;
 };
 
 class Point2D::Hasher final {
