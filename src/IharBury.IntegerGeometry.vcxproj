@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="impl\math.h" />
     <ClInclude Include="line_2d.h" />
     <ClInclude Include="point_2d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="impl\math.cc" />
     <ClCompile Include="line_2d.cc" />
     <ClCompile Include="point_2d.cc" />
   </ItemGroup>

@@ -3,9 +3,20 @@
   <ItemGroup>
     <ClCompile Include="point_2d.cc" />
     <ClCompile Include="line_2d.cc" />
+    <ClCompile Include="impl\math.cc">
+      <Filter>impl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point_2d.h" />
     <ClInclude Include="line_2d.h" />
+    <ClInclude Include="impl\math.h">
+      <Filter>impl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="impl">
+      <UniqueIdentifier>{aea197a3-08b0-496a-a22c-f4dced12bc02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
