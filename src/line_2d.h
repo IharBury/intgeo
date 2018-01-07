@@ -1,5 +1,5 @@
-#ifndef IHARBURY_INTGEO_LINE_2D_H
-#define IHARBURY_INTGEO_LINE_2D_H
+#ifndef IHARBURY_INTGEO_LINE_2D_H_
+#define IHARBURY_INTGEO_LINE_2D_H_
 
 #include <stdint.h>
 
@@ -38,4 +38,4 @@ inline bool operator!=(const Line2D &line1, const Line2D &line2) {
 } // namespace iharbury
 
 
-#endif // IHARBURY_INTGEO_LINE_2D_H
+#endif // IHARBURY_INTGEO_LINE_2D_H_

@@ -1,5 +1,5 @@
-#ifndef IHARBURY_INTGEO_POINT_2D_H
-#define IHARBURY_INTGEO_POINT_2D_H
+#ifndef IHARBURY_INTGEO_POINT_2D_H_
+#define IHARBURY_INTGEO_POINT_2D_H_
 
 #include <stdint.h>
 
@@ -47,4 +47,4 @@ template<class Traits> std::basic_ostream<char, Traits>& operator<<(
 } // namespace intgeo
 } // namespace iharbury
 
-#endif // IHARBURY_INTGEO_POINT_2D_H
+#endif // IHARBURY_INTGEO_POINT_2D_H_
