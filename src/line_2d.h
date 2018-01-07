@@ -19,6 +19,9 @@ class Line2D final {
 
   inline const Point2D &point1() const { return point1_; }
   inline const Point2D &point2() const { return point2_; }
+  inline bool is_horizontal() const { return point1_.y() == point2_.y(); }
+  inline bool is_vertical() const { return point1_.x() == point2_.x(); }
+
   bool HasPoint(const Point2D &) const;
 
  private:

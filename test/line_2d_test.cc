@@ -118,4 +118,20 @@ TEST(line_2d_test, vertical_equal_lines_can_be_detected) {
     Line2D(Point2D(2, 5), Point2D(2, 6)));
 }
 
+TEST(line_2d_test, a_vertical_line_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(2, 7)).is_vertical());
+}
+
+TEST(line_2d_test, a_non_vertical_line_can_be_detected) {
+  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(3, 7)).is_vertical());
+}
+
+TEST(line_2d_test, a_horizontal_line_can_be_detected) {
+  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 4)).is_horizontal());
+}
+
+TEST(line_2d_test, a_non_horizontal_line_can_be_detected) {
+  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 3)).is_horizontal());
+}
+
 } // namespace
