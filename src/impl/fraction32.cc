@@ -17,11 +17,11 @@ Fraction32 Fraction32::FromNonCanonical(int32_t numerator, int32_t denominator) 
   assert(denominator != 0);
   assert(denominator != INT32_MIN);
 
-  int32_t fractionGcd = gcd(numerator, denominator);
-  int32_t canonicalNumerator =
-    denominator < 0 ? -numerator / fractionGcd : numerator / fractionGcd;
-  int32_t canonicalDenominator = abs(denominator / fractionGcd);
-  return Fraction32(canonicalNumerator, canonicalDenominator);
+  int32_t fraction_gcd = gcd(numerator, denominator);
+  int32_t canonical_numerator =
+    denominator < 0 ? -numerator / fraction_gcd : numerator / fraction_gcd;
+  int32_t canonical_denominator = abs(denominator / fraction_gcd);
+  return Fraction32(canonical_numerator, canonical_denominator);
 }
 
 } // namespace impl

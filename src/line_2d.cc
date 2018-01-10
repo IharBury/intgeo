@@ -22,15 +22,15 @@ bool Line2D::HasPoint(const Point2D &point) const {
 
   // Using int32_t to avoid overflow when subtracting 16-bit values
   // resulting in 17-bit values.
-  int32_t xDifference1 = int32_t(point.x()) - int32_t(point1_.x());
-  int32_t yDifference1 = int32_t(point.y()) - int32_t(point1_.y());
-  int32_t xDifference2 = int32_t(point.x()) - int32_t(point2_.x());
-  int32_t yDifference2 = int32_t(point.y()) - int32_t(point2_.y());
+  int32_t x_difference1 = int32_t(point.x()) - int32_t(point1_.x());
+  int32_t y_difference1 = int32_t(point.y()) - int32_t(point1_.y());
+  int32_t x_difference2 = int32_t(point.x()) - int32_t(point2_.x());
+  int32_t y_difference2 = int32_t(point.y()) - int32_t(point2_.y());
 
   // Using int64_t to avoid overflow when multiplying 17-bit values
   // resulting in 34-bit values.
-  return int64_t(xDifference1) * int64_t(yDifference2) ==
-    int64_t(yDifference1) * int64_t(xDifference2);
+  return int64_t(x_difference1) * int64_t(y_difference2) ==
+    int64_t(y_difference1) * int64_t(x_difference2);
 }
 
 } // namespace intgeo
