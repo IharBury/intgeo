@@ -36,27 +36,21 @@ TEST(point_2d_test, a_point_can_be_assigned) {
 }
 
 TEST(point_2d_test, points_are_equal_when_both_their_coordinates_match) {
-  EXPECT_TRUE(Point2D(4, 10) == Point2D(4, 10));
+  Point2D point1(4, 10), point2(4, 10);
+  EXPECT_TRUE(point1 == point2);
+  EXPECT_FALSE(point1 != point2);
 }
 
 TEST(point_2d_test, points_are_not_equal_when_their_x_coordinates_do_not_match) {
-  EXPECT_FALSE(Point2D(4, 10) == Point2D(6, 10));
+  Point2D point1(4, 10), point2(6, 10);
+  EXPECT_FALSE(point1 == point2);
+  EXPECT_TRUE(point1 != point2);
 }
 
 TEST(point_2d_test, points_are_not_equal_when_their_y_coordinates_do_not_match) {
-  EXPECT_FALSE(Point2D(4, 10) == Point2D(4, 8));
-}
-
-TEST(point_2d_test, points_are_not_inequal_when_both_their_coordinates_match) {
-  EXPECT_FALSE(Point2D(4, 10) != Point2D(4, 10));
-}
-
-TEST(point_2d_test, points_are_inequal_when_their_x_coordinates_do_not_match) {
-  EXPECT_TRUE(Point2D(4, 10) != Point2D(6, 10));
-}
-
-TEST(point_2d_test, points_are_inequal_when_their_y_coordinates_do_not_match) {
-  EXPECT_TRUE(Point2D(4, 10) != Point2D(4, 8));
+  Point2D point1(4, 10), point2(4, 8);
+  EXPECT_FALSE(point1 == point2);
+  EXPECT_TRUE(point1 != point2);
 }
 
 TEST(point_2d_test, points_have_the_same_hash_when_both_their_coordinates_match) {

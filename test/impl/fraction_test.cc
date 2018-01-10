@@ -68,27 +68,21 @@ TEST(impl_fraction_test, the_zero_fraction_can_be_created_from_its_non_canonical
 }
 
 TEST(impl_fraction_test, fractions_are_equal_when_both_their_numerators_and_denominators_match) {
-  EXPECT_TRUE(Fraction32(4, 9) == Fraction32(4, 9));
+  Fraction32 fraction1(4, 9), fraction2(4, 9);
+  EXPECT_TRUE(fraction1 == fraction2);
+  EXPECT_FALSE(fraction1 != fraction2);
 }
 
 TEST(impl_fraction_test, fractions_are_not_equal_when_their_numerators_do_not_match) {
-  EXPECT_FALSE(Fraction32(4, 9) == Fraction32(5, 9));
+  Fraction32 fraction1(4, 9), fraction2(5, 9);
+  EXPECT_FALSE(fraction1 == fraction2);
+  EXPECT_TRUE(fraction1 != fraction2);
 }
 
 TEST(impl_fraction_test, fractions_are_not_equal_when_their_denominators_do_not_match) {
-  EXPECT_FALSE(Fraction32(4, 9) == Fraction32(4, 7));
-}
-
-TEST(impl_fraction_test, fractions_are_not_inequal_when_both_their_numerators_and_denominators_match) {
-  EXPECT_FALSE(Fraction32(4, 9) != Fraction32(4, 9));
-}
-
-TEST(impl_fraction_test, fractions_are_inequal_when_their_numerators_do_not_match) {
-  EXPECT_TRUE(Fraction32(4, 9) != Fraction32(5, 9));
-}
-
-TEST(impl_fraction_test, fractions_are_inequal_when_their_denominators_do_not_match) {
-  EXPECT_TRUE(Fraction32(4, 9) != Fraction32(4, 7));
+  Fraction32 fraction1(4, 9), fraction2(4, 7);
+  EXPECT_FALSE(fraction1 == fraction2);
+  EXPECT_TRUE(fraction1 != fraction2);
 }
 
 TEST(impl_fraction_test, fractions_have_the_same_hash_when_both_their_numerators_and_denominators_match) {

@@ -79,43 +79,44 @@ TEST(line_2d_test, a_vertical_line_can_detect_a_point_not_on_it) {
 }
 
 TEST(line_2d_test, equal_lines_can_be_detected) {
-  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
-    Line2D(Point2D(3, 5), Point2D(4, 6)));
+  Line2D line1(Point2D(2, 4), Point2D(5, 7)),
+         line2(Point2D(3, 5), Point2D(4, 6));
+  EXPECT_TRUE(line1 == line2);
+  EXPECT_FALSE(line1 != line2);
 }
 
 TEST(line_2d_test, not_equal_lines_can_be_detected) {
-  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
-    Line2D(Point2D(3, 5), Point2D(4, 7)));
-}
-
-TEST(line_2d_test, not_inequal_lines_can_be_detected) {
-  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) !=
-    Line2D(Point2D(3, 5), Point2D(4, 6)));
-}
-
-TEST(line_2d_test, inequal_lines_can_be_detected) {
-  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) !=
-    Line2D(Point2D(3, 5), Point2D(4, 7)));
+  Line2D line1(Point2D(2, 4), Point2D(5, 7)),
+         line2(Point2D(3, 5), Point2D(4, 7));
+  EXPECT_FALSE(line1 == line2);
+  EXPECT_TRUE(line1 != line2);
 }
 
 TEST(line_2d_test, line_is_equal_to_itself) {
-  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
-    Line2D(Point2D(2, 4), Point2D(5, 7)));
+  Line2D line(Point2D(2, 4), Point2D(5, 7));
+  EXPECT_TRUE(line == line);
+  EXPECT_FALSE(line != line);
 }
 
 TEST(line_2d_test, parallel_lines_are_not_equal) {
-  EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 7)) ==
-    Line2D(Point2D(3, 4), Point2D(6, 7)));
+  Line2D line1(Point2D(2, 4), Point2D(5, 7)),
+         line2(Point2D(3, 4), Point2D(6, 7));
+  EXPECT_FALSE(line1 == line2);
+  EXPECT_TRUE(line1 != line2);
 }
 
 TEST(line_2d_test, horizonal_equal_lines_can_be_detected) {
-  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(5, 4)) ==
-    Line2D(Point2D(3, 4), Point2D(4, 4)));
+  Line2D line1(Point2D(2, 4), Point2D(5, 4)),
+         line2(Point2D(3, 4), Point2D(4, 4));
+  EXPECT_TRUE(line1 == line2);
+  EXPECT_FALSE(line1 != line2);
 }
 
 TEST(line_2d_test, vertical_equal_lines_can_be_detected) {
-  EXPECT_TRUE(Line2D(Point2D(2, 4), Point2D(2, 7)) ==
-    Line2D(Point2D(2, 5), Point2D(2, 6)));
+  Line2D line1(Point2D(2, 4), Point2D(2, 7)),
+         line2(Point2D(2, 5), Point2D(2, 6));
+  EXPECT_TRUE(line1 == line2);
+  EXPECT_FALSE(line1 != line2);
 }
 
 TEST(line_2d_test, a_vertical_line_can_be_detected) {
