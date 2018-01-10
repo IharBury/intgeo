@@ -1,12 +1,11 @@
 #ifndef IHARBURY_INTGEO_IMPL_FRACTION32_H_
 #define IHARBURY_INTGEO_IMPL_FRACTION32_H_
 
-#include <stdint.h>
+#include <cassert> // assert
+#include <cstddef> // std::site_t
+#include <cstdint> // int32_t, INT32_MIN
 
-#include <cassert>
-#include <cstddef>
-
-#include "impl/math.h"
+#include "impl/math.h" // iharbury::intgeo::impl::gcd
 
 namespace iharbury {
 namespace intgeo {

@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "impl/math.h"
+#include "impl/math.h" // iharbury::intgeo::impl::gcd
 
 namespace {
 

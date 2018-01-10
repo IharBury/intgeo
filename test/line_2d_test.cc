@@ -1,7 +1,9 @@
+#include <cstdint> // INT16_MIN, INT16_MAX
+
 #include "gtest/gtest.h"
 
-#include "line_2d.h"
-#include "point_2d.h"
+#include "line_2d.h" // iharbury::intgeo::Line2D
+#include "point_2d.h" // iharbury::intgeo::Point2D
 
 namespace {
 

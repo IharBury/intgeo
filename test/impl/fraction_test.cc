@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "impl/fraction32.h"
+#include "impl/fraction32.h" // iharbury::intgeo::impl::Fraction32
 
 namespace {
 

@@ -1,5 +1,9 @@
 #include "line_2d.h"
 
+#include <cstdint> // int32_t, int64_t
+
+#include "point_2d.h" // iharbury::intgeo::Point2D
+
 namespace iharbury {
 namespace intgeo {
 

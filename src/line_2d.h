@@ -1,11 +1,9 @@
 #ifndef IHARBURY_INTGEO_LINE_2D_H_
 #define IHARBURY_INTGEO_LINE_2D_H_
 
-#include <stdint.h>
+#include <cassert> // assert
 
-#include <cassert>
-
-#include "point_2d.h"
+#include "point_2d.h" // iharbury::intgeo::Point2D
 
 namespace iharbury {
 namespace intgeo {

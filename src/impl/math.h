@@ -1,7 +1,7 @@
 #ifndef IHARBURY_INTGEO_IMPL_MATH_H_
 #define IHARBURY_INTGEO_IMPL_MATH_H_
 
-#include <stdint.h>
+#include <cstdint> // int32_t
 
 namespace iharbury {
 namespace intgeo {

@@ -1,10 +1,16 @@
 #include "fraction32.h"
 
-#include <cstdlib>
+#include <cassert> // assert
+#include <cstdlib> // std::abs
+#include <cstdint> // int32_t, INT32_MIN
+
+#include "impl/math.h" // iharbury::intgeo::impl::gcd
 
 namespace iharbury {
 namespace intgeo {
 namespace impl { // Internal, not part of the API.
+
+using ::std::abs;
 
 Fraction32 Fraction32::FromNonCanonical(int32_t numerator, int32_t denominator) {
   assert(numerator != INT32_MIN);

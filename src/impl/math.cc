@@ -1,11 +1,13 @@
 #include "math.h"
 
-#include <cassert>
-#include <cstdlib>
+#include <cassert> // assert
+#include <cstdlib> // int32_t, INT32_MIN, std::abs
 
 namespace iharbury {
 namespace intgeo {
 namespace impl { // Internal, not part of the API.
+
+using ::std::abs;
 
 // Euclidian algorithm.
 int32_t gcd(const int32_t value1, const int32_t value2) {

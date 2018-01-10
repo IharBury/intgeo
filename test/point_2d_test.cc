@@ -1,8 +1,9 @@
-#include <sstream>
+#include <sstream> // std::stringstream
+#include <string> // std::string
 
 #include "gtest/gtest.h"
 
-#include "point_2d.h"
+#include "point_2d.h" // iharbury::intgeo::Point2D
 
 namespace {
 

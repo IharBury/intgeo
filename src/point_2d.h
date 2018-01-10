@@ -1,10 +1,9 @@
 #ifndef IHARBURY_INTGEO_POINT_2D_H_
 #define IHARBURY_INTGEO_POINT_2D_H_
 
-#include <stdint.h>
-
-#include <cstddef>
-#include <ostream>
+#include <cstddef> // std::size_t
+#include <cstdint> // int16_t
+#include <ostream> // std::basic_ostream
 
 namespace iharbury {
 namespace intgeo {
