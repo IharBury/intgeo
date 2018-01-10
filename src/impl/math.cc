@@ -1,7 +1,7 @@
-#include "math.h"
+#include "impl/math.h"
 
 #include <cassert> // assert
-#include <cstdlib> // int32_t, INT32_MIN, std::abs
+#include <cstdlib> // int64_t, INT64_MIN, std::abs
 
 namespace iharbury {
 namespace intgeo {
@@ -10,16 +10,16 @@ namespace impl { // Internal, not part of the API.
 using ::std::abs;
 
 // Euclidian algorithm.
-int32_t gcd(const int32_t value1, const int32_t value2) {
+int64_t gcd(const int64_t value1, const int64_t value2) {
   assert((value1 != 0) || (value2 != 0));
-  assert(value1 != INT32_MIN);
-  assert(value2 != INT32_MIN);
+  assert(value1 != INT64_MIN);
+  assert(value2 != INT64_MIN);
 
-  int32_t dividend = abs(value1);
-  int32_t divisor = abs(value2);
+  int64_t dividend = abs(value1);
+  int64_t divisor = abs(value2);
 
   while (divisor != 0) {
-    int32_t mod = dividend % divisor;
+    int64_t mod = dividend % divisor;
     dividend = divisor;
     divisor = mod;
   }

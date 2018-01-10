@@ -2,6 +2,7 @@
 #define IHARBURY_INTGEO_LINE_2D_H_
 
 #include <cassert> // assert
+#include <cstddef> // std::size_t
 
 #include "point_2d.h" // iharbury::intgeo::Point2D
 
@@ -10,6 +11,8 @@ namespace intgeo {
 
 class Line2D final {
  public:
+  class Hasher;
+
   inline Line2D(const Point2D &point1, const Point2D& point2) :
       point1_(point1), point2_(point2) {
     assert(point1 != point2);
@@ -26,6 +29,12 @@ class Line2D final {
   Point2D point1_;
   Point2D point2_;
 };
+
+class Line2D::Hasher final {
+ public:
+  std::size_t operator()(const Line2D &) const;
+};
+
 
 inline bool operator==(const Line2D &line1, const Line2D &line2) {
   return line1.HasPoint(line2.point1()) && line1.HasPoint(line2.point2());

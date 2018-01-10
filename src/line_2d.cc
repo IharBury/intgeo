@@ -1,11 +1,22 @@
 #include "line_2d.h"
 
+#include <cstddef> // std::size_t
 #include <cstdint> // int32_t, int64_t
+#include <functional> // std::hash
 
 #include "point_2d.h" // iharbury::intgeo::Point2D
+#include "impl/fraction64.h" // iharbury::intgeo::impl::Fraction64
+#include "impl/line_2d_impl.h" // iharbury::intgeo::impl::GetXOfXAxisCrossing,
+                               // iharbury::intgeo::impl::GetSlope
 
 namespace iharbury {
 namespace intgeo {
+
+using ::std::hash;
+using ::std::size_t;
+using ::iharbury::intgeo::impl::Fraction64;
+using ::iharbury::intgeo::impl::GetSlope;
+using ::iharbury::intgeo::impl::GetXOfXAxisCrossing;
 
 bool Line2D::HasPoint(const Point2D &point) const {
   // Ignoring the case when the point is equal
@@ -31,6 +42,24 @@ bool Line2D::HasPoint(const Point2D &point) const {
   // resulting in 34-bit values.
   return int64_t(x_difference1) * int64_t(y_difference2) ==
     int64_t(y_difference1) * int64_t(x_difference2);
+}
+
+size_t Line2D::Hasher::operator()(const Line2D &line) const {
+  if (line.is_vertical()) {
+    // A vertical line is completely described by its x coordinate.
+    return size_t(line.point1_.x());
+  }
+
+  if (line.is_horizontal()) {
+    // A horizontal line is completely described by its y coordinate.
+    return size_t(line.point1_.y()) * size_t(37987);
+  }
+
+  // The slope together with the x axis crossing point
+  // form a canonical representation of the line.
+  Fraction64::Hasher fractionHasher;
+  return fractionHasher(GetSlope(line)) * size_t(37987) +
+    fractionHasher(GetXOfXAxisCrossing(line));
 }
 
 } // namespace intgeo

@@ -6,7 +6,10 @@
     <ClCompile Include="impl\math.cc">
       <Filter>impl</Filter>
     </ClCompile>
-    <ClCompile Include="impl\fraction32.cc">
+    <ClCompile Include="impl\fraction64.cc">
+      <Filter>impl</Filter>
+    </ClCompile>
+    <ClCompile Include="impl\line_2d_impl.cc">
       <Filter>impl</Filter>
     </ClCompile>
   </ItemGroup>
@@ -16,7 +19,10 @@
     <ClInclude Include="impl\math.h">
       <Filter>impl</Filter>
     </ClInclude>
-    <ClInclude Include="impl\fraction32.h">
+    <ClInclude Include="impl\fraction64.h">
+      <Filter>impl</Filter>
+    </ClInclude>
+    <ClInclude Include="impl\line_2d_impl.h">
       <Filter>impl</Filter>
     </ClInclude>
   </ItemGroup>

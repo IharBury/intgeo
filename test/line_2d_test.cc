@@ -137,4 +137,11 @@ TEST(line_2d_test, a_non_horizontal_line_can_be_detected) {
   EXPECT_FALSE(Line2D(Point2D(2, 4), Point2D(5, 3)).is_horizontal());
 }
 
+TEST(line_2d_test, equal_lines_have_the_same_hash) {
+  Line2D line1(Point2D(2, 4), Point2D(5, 7)),
+         line2(Point2D(3, 5), Point2D(4, 6));
+  Line2D::Hasher hasher;
+  EXPECT_EQ(hasher(line1), hasher(line2));
+}
+
 } // namespace

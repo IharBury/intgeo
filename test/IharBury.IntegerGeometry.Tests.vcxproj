@@ -33,7 +33,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="impl\fraction_test.cc" />
+    <ClCompile Include="impl\fraction64_test.cc" />
+    <ClCompile Include="impl\line_2d_impl_test.cc" />
     <ClCompile Include="impl\math_test.cc" />
     <ClCompile Include="line_2d_test.cc" />
     <ClCompile Include="point_2d_test.cc" />

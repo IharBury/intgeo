@@ -19,13 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="impl\fraction32.h" />
+    <ClInclude Include="impl\fraction64.h" />
+    <ClInclude Include="impl\line_2d_impl.h" />
     <ClInclude Include="impl\math.h" />
     <ClInclude Include="line_2d.h" />
     <ClInclude Include="point_2d.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="impl\fraction32.cc" />
+    <ClCompile Include="impl\fraction64.cc" />
+    <ClCompile Include="impl\line_2d_impl.cc" />
     <ClCompile Include="impl\math.cc" />
     <ClCompile Include="line_2d.cc" />
     <ClCompile Include="point_2d.cc" />
