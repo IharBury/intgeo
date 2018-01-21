@@ -47,19 +47,21 @@ bool Line2D::HasPoint(const Point2D &point) const {
 size_t Line2D::Hasher::operator()(const Line2D &line) const {
   if (line.is_vertical()) {
     // A vertical line is completely described by its x coordinate.
-    return size_t(line.point1_.x());
+    hash<int16_t> coordinateHasher{};
+    return coordinateHasher(line.point1_.x());
   }
 
   if (line.is_horizontal()) {
     // A horizontal line is completely described by its y coordinate.
-    return size_t(line.point1_.y()) * size_t(37987);
+    hash<int16_t> coordinate_hasher{};
+    return coordinate_hasher(line.point1_.y()) * size_t(37987);
   }
 
   // The slope together with the x axis crossing point
   // form a canonical representation of the line.
-  Fraction64::Hasher fractionHasher;
-  return fractionHasher(GetSlope(line)) * size_t(37987) +
-    fractionHasher(GetXOfXAxisCrossing(line));
+  Fraction64::Hasher fraction_hasher{};
+  return fraction_hasher(GetSlope(line)) * size_t(37987) +
+    fraction_hasher(GetXOfXAxisCrossing(line));
 }
 
 } // namespace intgeo

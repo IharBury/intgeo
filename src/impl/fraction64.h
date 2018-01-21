@@ -45,11 +45,10 @@ class Fraction64 final {
 class Fraction64::Hasher final {
  public:
   inline std::size_t operator()(const Fraction64 &fraction) const {
-    return int64_hasher_(fraction.numerator()) * std::size_t(37987) +
-      int64_hasher_(fraction.denominator());
+    std::hash<int64_t> int64_hasher{};
+    return int64_hasher(fraction.numerator()) * std::size_t(37987) +
+      int64_hasher(fraction.denominator());
   }
- private:
-  std::hash<int64_t> int64_hasher_;
 };
 
 inline bool operator==(const Fraction64 &fraction1,

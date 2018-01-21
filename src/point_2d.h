@@ -3,6 +3,7 @@
 
 #include <cstddef> // std::size_t
 #include <cstdint> // int16_t
+#include <functional> // std::hash
 #include <ostream> // std::basic_ostream
 
 namespace iharbury {
@@ -26,7 +27,9 @@ class Point2D final {
 class Point2D::Hasher final {
  public:
   inline std::size_t operator()(const Point2D &point) const {
-    return std::size_t(point.x()) * std::size_t(37987) + std::size_t(point.y());
+    std::hash<int16_t> coordinate_hasher{};
+    return coordinate_hasher(point.x()) * std::size_t(37987) +
+           coordinate_hasher(point.y());
   }
 };
 
