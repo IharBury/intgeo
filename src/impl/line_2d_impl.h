@@ -17,8 +17,10 @@ inline Fraction64 GetSlope(const Line2D &line) {
 
   // Using int32_t to avoid overflow when subtracting 16-bit values
   // resulting in 17-bit values.
-  int32_t x_difference = line.point2().x() - line.point1().x();
-  int32_t y_difference = line.point2().y() - line.point1().y();
+  int32_t x_difference = int32_t(line.point2().x()) -
+                         int32_t(line.point1().x());
+  int32_t y_difference = int32_t(line.point2().y()) -
+                         int32_t(line.point1().y());
 
   return Fraction64::FromNonCanonical(y_difference, x_difference);
 }
@@ -28,8 +30,10 @@ inline Fraction64 GetXOfXAxisCrossing(const Line2D &line) {
 
   // Using int32_t to avoid overflow when subtracting 16-bit values
   // resulting in 17-bit values.
-  int32_t x_difference = line.point2().x() - line.point1().x();
-  int32_t y_difference = line.point2().y() - line.point1().y();
+  int32_t x_difference = int32_t(line.point2().x()) -
+                         int32_t(line.point1().x());
+  int32_t y_difference = int32_t(line.point2().y()) -
+                         int32_t(line.point1().y());
 
   return Fraction64::FromNonCanonical(
     int64_t(line.point1().x()) * int64_t(y_difference) -
