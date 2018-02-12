@@ -11,6 +11,8 @@
 namespace iharbury {
 namespace intgeo {
 
+// Represents a 2D point with 16-bit integer Cartesian coordinates.
+// Supports equality comparison and hashing.
 class Point2D final {
  public:
   class Hasher;
@@ -26,6 +28,7 @@ class Point2D final {
   int16_t y_;
 };
 
+// Should be used instead of std::hash to calculates hashes of Point2D values.
 class Point2D::Hasher final {
  public:
   inline std::size_t operator()(const Point2D &point) const {
