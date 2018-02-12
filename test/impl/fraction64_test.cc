@@ -1,6 +1,8 @@
+// Copyright 2018 Ihar Bury
+
 #include "gtest/gtest.h"
 
-#include "impl/fraction64.h" // iharbury::intgeo::impl::Fraction64
+#include "src/impl/fraction64.h"  // iharbury::intgeo::impl::Fraction64
 
 namespace {
 
@@ -90,4 +92,4 @@ TEST(impl_fraction_test, fractions_have_the_same_hash_when_both_their_numerators
   EXPECT_EQ(hasher(Fraction64(4, 9)), hasher(Fraction64(4, 9)));
 }
 
-} // namespace
+}  // namespace

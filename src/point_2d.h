@@ -1,10 +1,12 @@
-#ifndef IHARBURY_INTGEO_POINT_2D_H_
-#define IHARBURY_INTGEO_POINT_2D_H_
+// Copyright 2018 Ihar Bury
 
-#include <cstddef> // std::size_t
-#include <cstdint> // int16_t
-#include <functional> // std::hash
-#include <ostream> // std::basic_ostream
+#ifndef SRC_POINT_2D_H_
+#define SRC_POINT_2D_H_
+
+#include <cstddef>  // std::size_t
+#include <cstdint>  // int16_t
+#include <functional>  // std::hash
+#include <ostream>  // std::basic_ostream
 
 namespace iharbury {
 namespace intgeo {
@@ -46,7 +48,7 @@ template<class Traits> std::basic_ostream<char, Traits>& operator<<(
   return x << '(' << point.x() << ", " << point.y() << ')';
 }
 
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace intgeo
+}  // namespace iharbury
 
-#endif // IHARBURY_INTGEO_POINT_2D_H_
+#endif  // SRC_POINT_2D_H_

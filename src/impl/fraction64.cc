@@ -1,14 +1,16 @@
-#include "impl/fraction64.h"
+// Copyright 2018 Ihar Bury
 
-#include <cassert> // assert
-#include <cstdlib> // std::abs
-#include <cstdint> // int64_t, INT64_MIN
+#include "src/impl/fraction64.h"
 
-#include "impl/math.h" // iharbury::intgeo::impl::gcd
+#include <cassert>  // assert
+#include <cstdlib>  // std::abs
+#include <cstdint>  // int64_t, INT64_MIN
+
+#include "src/impl/math.h"  // iharbury::intgeo::impl::gcd
 
 namespace iharbury {
 namespace intgeo {
-namespace impl { // Internal, not part of the API.
+namespace impl {  // Internal, not part of the API.
 
 using ::std::abs;
 
@@ -25,6 +27,6 @@ Fraction64 Fraction64::FromNonCanonical(int64_t numerator,
   return Fraction64(canonical_numerator, canonical_denominator);
 }
 
-} // namespace impl
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace impl
+}  // namespace intgeo
+}  // namespace iharbury

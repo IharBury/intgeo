@@ -1,9 +1,11 @@
-#include <cstdint> // INT16_MIN, INT16_MAX
+// Copyright 2018 Ihar Bury
+
+#include <cstdint>  // INT16_MIN, INT16_MAX
 
 #include "gtest/gtest.h"
 
-#include "line_2d.h" // iharbury::intgeo::Line2D
-#include "point_2d.h" // iharbury::intgeo::Point2D
+#include "src/line_2d.h"  // iharbury::intgeo::Line2D
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
 
 namespace {
 
@@ -144,4 +146,4 @@ TEST(line_2d_test, equal_lines_have_the_same_hash) {
   EXPECT_EQ(hasher(line1), hasher(line2));
 }
 
-} // namespace
+}  // namespace

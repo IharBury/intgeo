@@ -1,16 +1,18 @@
-#ifndef IHARBURY_INTGEO_IMPL_FRACTION64_H_
-#define IHARBURY_INTGEO_IMPL_FRACTION64_H_
+// Copyright 2018 Ihar Bury
 
-#include <cassert> // assert
-#include <cstddef> // std::site_t
-#include <cstdint> // int64_t, INT64_MIN
-#include <functional> // std::hash
+#ifndef SRC_IMPL_FRACTION64_H_
+#define SRC_IMPL_FRACTION64_H_
 
-#include "impl/math.h" // iharbury::intgeo::impl::gcd
+#include <cassert>  // assert
+#include <cstddef>  // std::site_t
+#include <cstdint>  // int64_t, INT64_MIN
+#include <functional>  // std::hash
+
+#include "src/impl/math.h"  // iharbury::intgeo::impl::gcd
 
 namespace iharbury {
 namespace intgeo {
-namespace impl { // Internal, not part of the API.
+namespace impl {  // Internal, not part of the API.
 
 // A fraction in its canonical representation
 // with 64-bit coprime numerator and denominator
@@ -62,8 +64,8 @@ inline bool operator!=(const Fraction64 &fraction1,
   return !(fraction1 == fraction2);
 }
 
-} // namespace impl
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace impl
+}  // namespace intgeo
+}  // namespace iharbury
 
-#endif // IHARBURY_INTGEO_IMPL_FRACTION64_H_
+#endif  // SRC_IMPL_FRACTION64_H_

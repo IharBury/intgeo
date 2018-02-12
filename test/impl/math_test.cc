@@ -1,6 +1,8 @@
+// Copyright 2018 Ihar Bury
+
 #include "gtest/gtest.h"
 
-#include "impl/math.h" // iharbury::intgeo::impl::gcd
+#include "src/impl/math.h"  // iharbury::intgeo::impl::gcd
 
 namespace {
 
@@ -62,4 +64,4 @@ TEST(impl_math_gcd_test, gcd_of_4_and_210_is_2) {
   EXPECT_EQ(2, gcd(4, 210));
 }
 
-} // namespace
+}  // namespace

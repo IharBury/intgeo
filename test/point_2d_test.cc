@@ -1,9 +1,11 @@
-#include <sstream> // std::stringstream
-#include <string> // std::string
+// Copyright 2018 Ihar Bury
+
+#include <sstream>  // std::stringstream
+#include <string>  // std::string
 
 #include "gtest/gtest.h"
 
-#include "point_2d.h" // iharbury::intgeo::Point2D
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
 
 namespace {
 
@@ -65,4 +67,4 @@ TEST(point_2d_test, a_point_can_be_written_to_a_stream) {
   EXPECT_EQ("(4, 10)", stream.str());
 }
 
-} // namespace
+}  // namespace

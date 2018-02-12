@@ -1,16 +1,18 @@
-#ifndef IHARBURY_INTGEO_IMPL_LINE_2D_IMPL_H_
-#define IHARBURY_INTGEO_IMPL_LINE_2D_IMPL_H_
+// Copyright 2018 Ihar Bury
 
-#include <cassert> // assert
-#include <cstddef> // std::size_t
-#include <cstdint> // int32_t, int64_t
+#ifndef SRC_IMPL_LINE_2D_IMPL_H_
+#define SRC_IMPL_LINE_2D_IMPL_H_
 
-#include "line_2d.h" // iharbury::intgeo::Line2D
-#include "impl/fraction64.h" // iharbury::intgeo::impl::Fraction64
+#include <cassert>  // assert
+#include <cstddef>  // std::size_t
+#include <cstdint>  // int32_t, int64_t
+
+#include "src/line_2d.h"  // iharbury::intgeo::Line2D
+#include "src/impl/fraction64.h"  // iharbury::intgeo::impl::Fraction64
 
 namespace iharbury {
 namespace intgeo {
-namespace impl { // Internal, not part of the API.
+namespace impl {  // Internal, not part of the API.
 
 inline Fraction64 GetSlope(const Line2D &line) {
   assert(!line.is_vertical());
@@ -43,9 +45,9 @@ inline Fraction64 GetXOfXAxisCrossing(const Line2D &line) {
     y_difference);
 }
 
-} // namespace impl
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace impl
+}  // namespace intgeo
+}  // namespace iharbury
 
 
-#endif // IHARBURY_INTGEO_IMPL_LINE_2D_IMPL_H_
+#endif  // SRC_IMPL_LINE_2D_IMPL_H_

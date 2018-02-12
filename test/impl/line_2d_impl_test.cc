@@ -1,10 +1,14 @@
+// Copyright 2018 Ihar Bury
+
 #include "gtest/gtest.h"
 
-#include "line_2d.h" // iharbury::intgeo::Line2D
-#include "point_2d.h" // iharbury::intgeo::Point2D
-#include "impl/fraction64.h" // iharbury::intgeo::impl::Fraction64
-#include "impl/line_2d_impl.h" // iharbury::intgeo::impl::GetSlope,
-                               // iharbury::intgeo::impl::GetXOfXAxisCrossing
+#include "src/line_2d.h"  // iharbury::intgeo::Line2D
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
+#include "src/impl/fraction64.h"  // iharbury::intgeo::impl::Fraction64
+
+// iharbury::intgeo::impl::GetSlope,
+// iharbury::intgeo::impl::GetXOfXAxisCrossing
+#include "src/impl/line_2d_impl.h"
 
 namespace {
 
@@ -34,4 +38,4 @@ TEST(line_2d_test, the_x_of_the_x_axis_crossing_point_of_a_vertical_line_can_be_
   EXPECT_EQ(Fraction64(4, 1), GetXOfXAxisCrossing(line));
 }
 
-} // namespace
+}  // namespace

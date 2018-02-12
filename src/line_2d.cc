@@ -1,13 +1,17 @@
-#include "line_2d.h"
+// Copyright 2018 Ihar Bury
 
-#include <cstddef> // std::size_t
-#include <cstdint> // int32_t, int64_t
-#include <functional> // std::hash
+#include "src/line_2d.h"
 
-#include "point_2d.h" // iharbury::intgeo::Point2D
-#include "impl/fraction64.h" // iharbury::intgeo::impl::Fraction64
-#include "impl/line_2d_impl.h" // iharbury::intgeo::impl::GetXOfXAxisCrossing,
-                               // iharbury::intgeo::impl::GetSlope
+#include <cstddef>  // std::size_t
+#include <cstdint>  // int32_t, int64_t
+#include <functional>  // std::hash
+
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
+#include "src/impl/fraction64.h"  // iharbury::intgeo::impl::Fraction64
+
+// iharbury::intgeo::impl::GetXOfXAxisCrossing,
+// iharbury::intgeo::impl::GetSlope
+#include "src/impl/line_2d_impl.h"
 
 namespace iharbury {
 namespace intgeo {
@@ -64,5 +68,5 @@ size_t Line2D::Hasher::operator()(const Line2D &line) const {
     fraction_hasher(GetXOfXAxisCrossing(line));
 }
 
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace intgeo
+}  // namespace iharbury

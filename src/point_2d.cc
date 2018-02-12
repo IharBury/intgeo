@@ -1,1 +1,3 @@
-#include "point_2d.h"
+// Copyright 2018 Ihar Bury
+
+#include "src/point_2d.h"

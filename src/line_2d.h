@@ -1,10 +1,12 @@
-#ifndef IHARBURY_INTGEO_LINE_2D_H_
-#define IHARBURY_INTGEO_LINE_2D_H_
+// Copyright 2018 Ihar Bury
 
-#include <cassert> // assert
-#include <cstddef> // std::size_t
+#ifndef SRC_LINE_2D_H_
+#define SRC_LINE_2D_H_
 
-#include "point_2d.h" // iharbury::intgeo::Point2D
+#include <cassert>  // assert
+#include <cstddef>  // std::size_t
+
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
 
 namespace iharbury {
 namespace intgeo {
@@ -44,8 +46,8 @@ inline bool operator!=(const Line2D &line1, const Line2D &line2) {
   return !(line1 == line2);
 }
 
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace intgeo
+}  // namespace iharbury
 
 
-#endif // IHARBURY_INTGEO_LINE_2D_H_
+#endif  // SRC_LINE_2D_H_

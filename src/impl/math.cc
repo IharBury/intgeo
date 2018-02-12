@@ -1,11 +1,13 @@
-#include "impl/math.h"
+// Copyright 2018 Ihar Bury
 
-#include <cassert> // assert
-#include <cstdlib> // int64_t, INT64_MIN, std::abs
+#include "src/impl/math.h"
+
+#include <cassert>  // assert
+#include <cstdlib>  // int64_t, INT64_MIN, std::abs
 
 namespace iharbury {
 namespace intgeo {
-namespace impl { // Internal, not part of the API.
+namespace impl {  // Internal, not part of the API.
 
 using ::std::abs;
 
@@ -27,6 +29,6 @@ int64_t gcd(const int64_t value1, const int64_t value2) {
   return dividend;
 }
 
-} // namespace impl
-} // namespace intgeo
-} // namespace iharbury
+}  // namespace impl
+}  // namespace intgeo
+}  // namespace iharbury

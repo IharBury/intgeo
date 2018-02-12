@@ -1,9 +1,11 @@
-#include <unordered_map> // std::unordered_map
+// Copyright 2018 Ihar Bury
+
+#include <unordered_map>  // std::unordered_map
 
 #include "gtest/gtest.h"
 
-#include "line_2d.h" // iharbury::intgeo::Line2D
-#include "point_2d.h" // iharbury::intgeo::Point2D
+#include "src/line_2d.h"  // iharbury::intgeo::Line2D
+#include "src/point_2d.h"  // iharbury::intgeo::Point2D
 
 namespace {
 
@@ -18,4 +20,4 @@ TEST(example, lines_can_be_used_as_keys_in_hash_map) {
   EXPECT_EQ(2, value);
 }
 
-} // namespace
+}  // namespace
