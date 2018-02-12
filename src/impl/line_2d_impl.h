@@ -35,6 +35,8 @@ inline Fraction64 GetXOfXAxisCrossing(const Line2D &line) {
   int32_t y_difference = int32_t(line.point2().y()) -
                          int32_t(line.point1().y());
 
+  // Using int64_t to avoid overflow when multiplying 17-bit values
+  // resulting in 34-bit values.
   return Fraction64::FromNonCanonical(
     int64_t(line.point1().x()) * int64_t(y_difference) -
       int64_t(line.point1().y()) * int64_t(x_difference),
