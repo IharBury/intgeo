@@ -15,6 +15,7 @@
     <ClCompile Include="impl\line_2d_impl_test.cc">
       <Filter>impl</Filter>
     </ClCompile>
+    <ClCompile Include="example.cc" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="impl">
